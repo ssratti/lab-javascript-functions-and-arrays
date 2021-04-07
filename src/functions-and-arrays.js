@@ -9,17 +9,50 @@ function maxOfTwoNumbers(num1, num2) {
 
 // Iteration #2: Find longest word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
-
+function findLongestWord(arr) {
+  let word = "";
+  for (let i = 0; i < arr.length; i++) {
+    if (word.length < arr[i].length) {
+      word = arr[i]
+    }
+  }
+  return word || null;
+}
 // Iteration #3: Calculate the sum
 
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
+function sumNumbers(a) {
+  let total = 0;
+  for (let i in a) {
+    total += a[i];
+  }
+  return total;
+}
+let sum = sumNumbers(numbers);
+
 
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
+function averageNumbers(a) {
+  if (a.length === 0) return null
+  const total = a.reduce((acc, c) => acc + c, 0);
+  return total / a.length;
+
+
+}
+
 
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
+function averageWordLength(a) {
+  if (a.length === 0) return null;
+  let wordLen = [];
+  for (word of a) {
+    wordLen.push(word.length);
+  }
+  return averageNumbers(wordLen);
+}
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
@@ -35,9 +68,24 @@ const wordsUnique = [
   'simple',
   'bring'
 ];
+function uniquifyArray(array) {
+  let newArr = [];
+  for (let i = 0; i < array.length; i++) {
+    let eachWord = array[i];
+    if (!newArr.includes(eachWord)) {
+      newArr.push(eachWord)
+    }
+  }
+  return newArr
+}
 
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
+
+function doesWordExist(a, word) {
+  return a.includes(word);
+}
+
 
 // Iteration #7: Count repetition
 const wordsCount = [
@@ -53,6 +101,20 @@ const wordsCount = [
   'disobedience',
   'matter'
 ];
+
+function howManyTimes(arr, word) {
+  let count = 0;
+
+  for (parolla of arr) {
+    console.log(parolla, word);
+    if (parolla == word) {
+      count++;
+    }
+  }
+  return count
+
+
+}
 
 // Iteration #8: Bonus
 
